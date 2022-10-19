@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- 다른 mapper와 중복되지 않도록 네임스페이스 기재 -->
+<mapper namespace="member">
+ <select id="memberList" resultType="com.example.spring02.model.member.dto.MemberDTO">
+  select * from member
+  order by name
+ </select>
+
+ <select id="login_check" 
+ parameterType="com.example.spring02.model.member.dto.MemberDTO"
+ resultType="String">
+  select name from member
+  where userid=#{userid} and passwd=#{passwd}
+ </select>
+ 
+ <select id="viewMember" 
+ resultType="com.example.spring02.model.member.dto.MemberDTO">
+  select * from member
+  where userid=#{userid}
+ </select>
+	
+	<insert id="insertMember">
+		INSERT INTO member (userid, passwd, name, email, zipcode, address1, address2)
+		VALUES (#{userid}, #{passwd}, #{name}, #{email}, #{zipcode}, #{address1}, #{address2})
+	</insert>
+	
+	<update id="updateMember">
+		UPDATE member
+		SET passwd=#{passwd}, name=#{name}, email=#{email}, zipcode=#{zipcode}, address1=#{address1}, address2=#{address2}
+		WHERE userid=#{userid}
+	</update>
+	
+	<!-- 수정용 비밀번호 체크 -->
+	<select id="checkPw" resultType="int">
+		SELECT count(*)
+		FROM member
+		WHERE userid=#{userid} AND passwd=#{passwd}
+	</select>
+	
+	<delete id="deleteMember">
+		DELETE FROM member
+		WHERE userid=#{userid}
+	</delete>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
