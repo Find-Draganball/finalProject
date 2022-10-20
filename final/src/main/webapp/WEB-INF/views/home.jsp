@@ -38,32 +38,76 @@
 		color: black!important;
 	}
 	
+	.slider {
+        width: 500px;
+        height: 300px;
+        background-color: yellow;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0px;
+        text-align: center;
+        overflow: hidden;
+      }
+      .image-container {
+        width: 1500px;
+        background-color: pink;
+        height: 300px;
+        clear: both;
+        position: relative;
+        -webkit-transition: left 2s;
+        -moz-transition: left 2s;
+        -o-transition: left 2s;
+        transition: left 2s;
+        animation-duration: 5s;
+      }
+      .slide {
+        float: left;
+        margin: 0px;
+        padding: 0px;
+        position: relative;
+      }
+      #slide-1:target ~ .image-container {
+        left: 0px;
+      }
+      #slide-2:target ~ .image-container {
+        left: -500px;
+      }
+      #slide-3:target ~ .image-container {
+        left: -1000px;
+      }
+      .buttons {
+        position: relative;
+        top: -20px;
+      }
+      .buttons a {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        border-radius: 50px;
+        background-color: lightgreen;
+      }
+	
 </style>
 </head>
 <body>
 <%@ include file="common/nav.jsp" %>
 <div class="home" >
 <div class="container">
-		<div class="row mt-5">
-			<div id="carouselBestAccos" class="carousel slide" data-bs-ride="carousel">
-				<div class="carousel-inner">
-					<c:forEach var="acco" varStatus="status" items="${bestAccos }">
-						<div data-acco-id="${acco.id }" class="carousel-item ${status.first? 'active' : '' }"  data-interval="20000">
-							<img src="/resources/images/acco/thumbnail/${acco.thumbnailImageName }" class="carousel-img card-img w-100">
-							<div class="card-img-overlay d-flex justify-content-between p-3" onclick="location.href='acco/detail?id=${acco.id}'">
-								<p class="acco-info text-dark fw-light p-3 mt-auto">
-									<span class="fs-3">${acco.name }</span>
-									<small class="ms-3">${acco.district }</small>
-								</p>
-								<a class="text-decoration-none ms-auto" href="acco/best">
-									<small id="link-best" class="text-light fw-light">지금 인기있는 숙소를 확인해보세요</small>
-								</a>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
-			</div>
-		</div>
+		<div class="slider">
+      <span id="slide-1"></span>
+      <span id="slide-2"></span>
+      <span id="slide-3"></span>
+      <div class="image-container">
+        <img src="images/dragonball_logo1.png" class="slide" width="500" height="300" />
+        <img src="images/dragonball_logo2.png" class="slide" width="500" height="300" />
+        <img src="images/i0076.jpg" class="slide" width="500" height="300" />
+      </div>
+      <div class="buttons">
+        <a href="#slide-1"></a>
+        <a href="#slide-2"></a>
+        <a href="#slide-3"></a>
+      </div>
+    </div>
 		<div class="d-flex flex-wrap justify-content-evenly" style="min-height: 350px;">
 			<!-- 숙소유형별 조회 아이콘은 DB에서 숙소유형 조회해서 출력 -->
 			<c:forEach var="accoType" items="${accoTypes }">

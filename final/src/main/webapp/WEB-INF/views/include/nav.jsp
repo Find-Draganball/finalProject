@@ -50,14 +50,18 @@
 	.nav-item {
 		
 	}
+	
+	.logo {
+	display: flex;
+	}
 </style>
 
 <nav class="navbar">
 	<div class="nav-container">
 		<!-- 홈버튼 -->
 		<div class="logo">
-		<a href="/"> <!-- 홈페이지로 이동 -->
-			<img src="" width="100" height="auto"><!-- 사진 넣을 공간 -->
+		<a href="#"> <!-- 홈페이지로 이동 -->
+			<img src="images/dragonball_logo2.png" width="100" height="40">
 		</a>
 		</div>
 		<!-- 검색창 -->
