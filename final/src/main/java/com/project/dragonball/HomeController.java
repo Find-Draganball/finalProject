@@ -1,4 +1,4 @@
-package com.example.spring02;
+package com.project.dragonball;
 
 import java.text.DateFormat;
 import java.util.Date;

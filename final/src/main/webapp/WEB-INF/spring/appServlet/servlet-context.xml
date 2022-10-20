@@ -36,7 +36,7 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 	<!-- 스프링 빈을 태그로 등록하지 않고 자동으로 검색(auto scan) --> 
-	<context:component-scan base-package="com.example.spring02" />
+	<context:component-scan base-package="com.project.dragonball" />
 	
 	<!-- 파일업로드에 필요한 bean -->
 	<beans:bean id="multipartResolver"
@@ -55,13 +55,13 @@
 	
 	<!-- 인터셉터 빈을 등록 -->
 	<beans:bean id="sampleInterceptor" 
-	 class="com.example.spring02.interceptor.SampleInterceptor">
+	 class="com.project.dragonball.interceptor.SampleInterceptor">
 	</beans:bean>
 	<beans:bean id="loginInterceptor" 
-	 class="com.example.spring02.interceptor.LoginInterceptor">
+	 class="com.project.dragonball.interceptor.LoginInterceptor">
 	</beans:bean>
 	<beans:bean id="adminInterceptor" 
-	 class="com.example.spring02.interceptor.AdminInterceptor">
+	 class="com.project.dragonball.interceptor.AdminInterceptor">
 	
 	</beans:bean>
 	
