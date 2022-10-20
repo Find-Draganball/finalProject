@@ -54,7 +54,7 @@
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 	
 	<!-- 인터셉터 빈을 등록 -->
-	<beans:bean id="sampleInterceptor" 
+	<!-- <beans:bean id="sampleInterceptor" 
 	 class="com.project.dragonball.interceptor.SampleInterceptor">
 	</beans:bean>
 	<beans:bean id="loginInterceptor" 
@@ -63,10 +63,10 @@
 	<beans:bean id="adminInterceptor" 
 	 class="com.project.dragonball.interceptor.AdminInterceptor">
 	
-	</beans:bean>
+	</beans:bean> -->
 	
 	<!-- 인터셉터 호출을 위한 url mapping -->
-	<interceptors>
+	<!-- <interceptors>
 	 <interceptor>
 	  <mapping path="/shop/**" />
 	  <beans:ref bean="sampleInterceptor" />
@@ -94,6 +94,6 @@
 	  <mapping path="/jchart/chart2.do"/>
 	  <beans:ref bean="adminInterceptor" />
 	 </interceptor>
-	</interceptors>
+	</interceptors> -->
 
 </beans:beans>
