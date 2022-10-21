@@ -109,25 +109,26 @@
       </div>
     </div>
 		<div class="d-flex flex-wrap justify-content-evenly" style="min-height: 350px;">
-			<!-- 숙소유형별 조회 아이콘은 DB에서 숙소유형 조회해서 출력 -->
-			<c:forEach var="accoType" items="${accoTypes }">
+			<!-- 숙소유형별 조회 -->
 				<div class="text-center my-auto">
-					<a href="acco?type=${accoType.id }"><img class="img-fluid" src="/resources/images/homeicons/${accoType.id }.png" style="width:100px;height:auto;"></a><br/>
-			    	<a href="acco?type=${accoType.id }" class="text-decoration-none text-dark fw-light">${accoType.name }</a>
+					<a href="#"><img class="img-fluid" src="images/homeicons/TYPE_001.png" style="width:100px;height:auto;"></a><br/>
+			    <a href="#" class="text-decoration-none text-dark fw-light">모텔</a>
 				</div>
-			</c:forEach>
-			<!-- TODO : 내 주변 조회 - 추후 가능하면 구현, 아니면 삭제하기  -->
-			<div class="text-center my-auto">
-				<a href="near"><img class="img-fluid" src="/resources/images/homeicons/near.png" style="width:100px;height:auto;"></a><br/>
-		    	<a href="near" class="text-decoration-none text-dark fw-light">내주변</a>
-			</div>
-			<div class="text-center my-auto">
-				<a href="restaurant"><img class="img-fluid" src="/resources/images/homeicons/restaurant.png" style="width:100px;height:auto;"></a><br/>
-		    	<a href="restaurant" class="text-decoration-none text-dark fw-light">맛어때</a>
-			</div>
+				<div class="text-center my-auto">
+					<a href="#"><img class="img-fluid" src="images/homeicons/TYPE_002.png" style="width:100px;height:auto;"></a><br/>
+			    <a href="#" class="text-decoration-none text-dark fw-light">호텔 리조트</a>
+				</div>
+				<div class="text-center my-auto">
+					<a href="#"><img class="img-fluid" src="images/homeicons/TYPE_003.png" style="width:100px;height:auto;"></a><br/>
+			    <a href="#" class="text-decoration-none text-dark fw-light">펜션</a>
+				</div>
+				<div class="text-center my-auto">
+					<a href="#"><img class="img-fluid" src="images/homeicons/TYPE_004.png" style="width:100px;height:auto;"></a><br/>
+			    <a href="#" class="text-decoration-none text-dark fw-light">게스트하우스</a>
+				</div>
 		</div>
 		<div class="row my-5 mx-auto" style="max-width: 950px;">
-			<div class="fw-bold text-dark mb-3"> 서울어때 소식</div>
+			<div class="fw-bold text-dark mb-3"> 거기어때 소식</div>
 			<div class="d-flex flex-wrap justify-content-between ">
 				<div class="card flex-fill p-1 mb-3 me-3">
 					<div class="row g-0">
@@ -136,8 +137,8 @@
 			  			</div>
 			  			<div class="col-md-8">
 			    			<div class="card-body">
-			      				<h5 class="card-title">서울어때 비즈니스</h5>
-			      				<p class="card-text">출장부터 복지까지<br>서울어때 비즈니스로 서마터하게</p>
+			      				<h5 class="card-title">거기어때 비즈니스</h5>
+			      				<p class="card-text">출장부터 복지까지<br>거기어때 비즈니스로 서마터하게</p>
 			    			</div>
 			  			</div>
 					</div>
